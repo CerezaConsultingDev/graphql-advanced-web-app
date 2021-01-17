@@ -1,0 +1,17 @@
+<ng-container *ngIf="productsResult$ | async as productsResult">
+  <ng-container *ngIf="!productsResult.loading; else loadingRef;">
+    <ul>
+      <li *ngFor="let product of productsResult.data.productos">
+        <span (click)="handlePublishedClick(product.id,!product.publicado)">
+          <input type="checkbox" [checked]="product.publicado">
+        </span>
+        <span>{{product.nombre}}</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" (click)="handleDelete(product.id)">Eliminar</button>
+      </li>
+    </ul>
+  </ng-container>
+  <ng-template #loadingRef>
+    <span>Cargando...</span>
+  </ng-template>
+</ng-container>

@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "graphql-advanced-web-app"
+  "defaultProject": "graphql-advanced-web-app",
+  "cli": {
+    "analytics": false
+  }
 }
